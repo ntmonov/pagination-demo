@@ -6,15 +6,15 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class PaginatePipe implements PipeTransform {
 
   transform(value: any[], ...args: any[]): unknown {
-    const objectsList: any[] = [...value];
     const page: number = args[0].page;
     const recordsPerPage: number = args[0].recordsPerPage;
 
-    // let objects: any[] = [];
+    const startIdx: number = (page - 1) * recordsPerPage;
+    const endIdx: number = startIdx + recordsPerPage;
 
-    // objects = objectsList.slice(page - 1, recordsPerPage);
+    const list: any[] = [...value].slice(startIdx, endIdx);
 
-    return objectsList.slice(page - 1, recordsPerPage);
+    return list;
   }
 
 }

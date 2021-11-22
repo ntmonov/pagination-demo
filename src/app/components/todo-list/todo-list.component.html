@@ -8,7 +8,7 @@
 ></app-paginator-controls>
 
 <ul *ngIf="todos">
-  <li *ngFor="let todo of todos | paginate: { page: page, recordsPerPage: 2 }">
+  <li *ngFor="let todo of todos | paginate: { page: page, recordsPerPage: 10 }">
     <app-todo-item [todo]="todo"></app-todo-item>
   </li>
 </ul>
