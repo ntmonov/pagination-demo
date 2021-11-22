@@ -1,0 +1,14 @@
+<h1>Todo List</h1>
+
+<app-paginator-controls
+  *ngIf="todos"
+  [totalRecords]="todos.length"
+  [recordsPerPage]="10"
+  (pageChange)="selectPage($event)"
+></app-paginator-controls>
+
+<ul *ngIf="todos">
+  <li *ngFor="let todo of todos | paginate: { page: page, recordsPerPage: 2 }">
+    <app-todo-item [todo]="todo"></app-todo-item>
+  </li>
+</ul>

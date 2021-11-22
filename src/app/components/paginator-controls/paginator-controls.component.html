@@ -1,0 +1,21 @@
+<div class="container">
+  <div
+    class="left-arrow"
+    (click)="selectPage(selectedPage - 1)">
+    <img src="../../../assets/left.png" alt="">
+  </div>
+  <div
+    class="page"
+    [ngClass]="{'current': page === selectedPage}"
+    *ngFor="let page of pages"
+    (click)="selectPage(page)"
+  >
+    {{ page }}
+  </div>
+  <div
+    class="right-arrow"
+    (click)="selectPage(selectedPage + 1)"
+    >
+    <img src="../../../assets//right.png" alt="">
+  </div>
+</div>
